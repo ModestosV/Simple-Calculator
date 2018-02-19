@@ -36,19 +36,6 @@
             />
 
         <activity
-<<<<<<< HEAD
-            android:name=".activities.WidgetConfigureActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyWidgetConfigTheme"
-            android:configChanges="screenSize">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
-            </intent-filter>
-        </activity>
-
-        <activity
-=======
->>>>>>> origin/master
             android:name=".activities.SettingsActivity"
             android:label="@string/settings"
             android:parentActivityName=".activities.MainActivity"
