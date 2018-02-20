@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -87,8 +88,6 @@ class MainActivity : SimpleActivity(), Calculator {
 
         }
 
-
-
         formula.setOnLongClickListener { copyToClipboard(false) }
         result.setOnLongClickListener { copyToClipboard(true) }
 
@@ -97,6 +96,29 @@ class MainActivity : SimpleActivity(), Calculator {
         storeStateVariables()
         updateViewColors(calculator_holder, config.textColor)
     }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putString("formula", getFormula())
+        outState?.putString("result", getResult())
+
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        formula.text = savedInstanceState?.getString("formula")
+        result.text = savedInstanceState?.getString("result")
+
+    }
+
+
+
+
+
+
+
+
+
+
 
     @SuppressLint("MissingSuperCall")
     override fun onResume() {
@@ -172,10 +194,18 @@ class MainActivity : SimpleActivity(), Calculator {
         result.text = value
     }
 
+    fun getResult():String{
+        return result.text.toString()
+    }
+
     // used only by Robolectric
     override fun setValueDouble(d: Double) {
         calc.setValue(Formatter.doubleToString(d))
         calc.lastKey = DIGIT
+    }
+
+     fun getFormula():String{
+        return formula.text.toString()
     }
 
     override fun setFormula(value: String, context: Context) {

@@ -108,6 +108,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
         mLastOperation = operation
     }
 
+
     fun handleStore(value : String, id: String) {
         if (lastKey == EQUALS && displayedNumber != "") {
             when (id) {
@@ -123,7 +124,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
         }
     }
 
-    fun handleViewValue(id: String) {
+    fun handleViewValue(id: String) :String {
         val variable: String?
         when (id) {
             MEMORY_ONE -> { variable = mSavedValue1.readText()
@@ -133,6 +134,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
                 }
                 else {
                     setFormula(variable)
+                    return variable
                 }
             }
             MEMORY_TWO -> { variable = mSavedValue2.readText()
@@ -142,6 +144,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
                 }
                 else {
                     setFormula(variable)
+                    return variable
                 }
             }
             MEMORY_THREE -> { variable = mSavedValue3.readText()
@@ -151,9 +154,11 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
                 }
                 else {
                     setFormula(variable)
+                    return variable
                 }
             }
         }
+        return ""
     }
 
     fun handleClear(formula : String) {
