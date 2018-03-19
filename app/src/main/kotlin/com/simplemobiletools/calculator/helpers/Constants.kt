@@ -15,13 +15,24 @@ object CONSTANT {
     const val RIGHT_BRACKET = "right_bracket"
     const val SHIFT = "shift"
     const val PI = "pi"
+    const val E = "e"
     const val SINE = "sine"
     const val COSINE = "cosine"
     const val TANGENT = "tangent"
     const val RECIPROCAL = "reciprocal"
     const val LOGARITHM = "logarithm"
-    const val PLUS_MINUS = "plus_minus"
     const val NATURAL_LOGARITHM = "natural_logarithm"
+    const val RANDOM = "random"
+    const val ARCSINE = "arcsine"
+    const val ARCCOS = "arccoss"
+    const val ARCTANGENT = "arctangent"
+    const val ROUNDING = "rounding"
+    const val CEILING = "ceiling"
+    const val SQUARE = "square"
+    const val CUBE =  "cube"
+    const val ABSOLUTE_VALUE = "absolute_value"
+    const val NEGATION = "negation"
+    const val FLOOR = "floor"
 
     //length conversion
     const val CENTIMETERS = "centimeters"
@@ -49,4 +60,5 @@ object CONSTANT {
     // error messages
     const val ERROR_SAVE_VALUE = "Error: No value saved"
     const val ERROR_READ_VALUE = "Error: No value to read"
+    const val ERROR_EMPTY_RESULT = "This operation only works when the result field is not empty."
 }

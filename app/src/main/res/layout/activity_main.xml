@@ -12,7 +12,7 @@
     <!--android:background="@color/dark_grey_pressed_mask" -->
 
     <Button
-        android:id="@+id/btn_pi"
+        android:id="@+id/btn_pi_rand"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -22,13 +22,13 @@
         android:text="&#960;"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_log"
+        app:layout_constraintBottom_toTopOf="@+id/btn_log_ceil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_memory_3" />
 
     <Button
-        android:id="@+id/btn_sin"
+        android:id="@+id/btn_sin_asin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -38,13 +38,13 @@
         android:text="sin"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_cos"
-        app:layout_constraintEnd_toStartOf="@+id/btn_cos"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_cos_acos"
+        app:layout_constraintEnd_toStartOf="@+id/btn_cos_acos"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_cos"
+        android:id="@+id/btn_cos_acos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -54,13 +54,13 @@
         android:text="cos"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_tan"
-        app:layout_constraintEnd_toStartOf="@+id/btn_tan"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_tan_atan"
+        app:layout_constraintEnd_toStartOf="@+id/btn_tan_atan"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_sin" />
+        app:layout_constraintStart_toEndOf="@+id/btn_sin_asin" />
 
     <Button
-        android:id="@+id/btn_tan"
+        android:id="@+id/btn_tan_atan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -70,13 +70,13 @@
         android:text="tan"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_reciprocal"
-        app:layout_constraintEnd_toStartOf="@+id/btn_reciprocal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_reciprocal_round"
+        app:layout_constraintEnd_toStartOf="@+id/btn_reciprocal_round"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_cos" />
+        app:layout_constraintStart_toEndOf="@+id/btn_cos_acos" />
 
     <Button
-        android:id="@+id/btn_reciprocal"
+        android:id="@+id/btn_reciprocal_round"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -86,13 +86,13 @@
         android:text="x&#8315;&#185;"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_log"
-        app:layout_constraintEnd_toStartOf="@+id/btn_log"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_log_ceil"
+        app:layout_constraintEnd_toStartOf="@+id/btn_log_ceil"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_tan" />
+        app:layout_constraintStart_toEndOf="@+id/btn_tan_atan" />
 
     <Button
-        android:id="@+id/btn_log"
+        android:id="@+id/btn_log_ceil"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -102,10 +102,10 @@
         android:text="log"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_ln"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ln_floor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_reciprocal" />
+        app:layout_constraintStart_toEndOf="@+id/btn_reciprocal_round" />
 
     <TextView
         android:id="@+id/formula"
@@ -157,7 +157,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_ln"
+        android:id="@+id/btn_ln_floor"
         android:layout_width="77dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -170,7 +170,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_all_clear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_plus_minus"
+        app:layout_constraintStart_toEndOf="@+id/btn_e_neg"
         tools:textAllCaps="false" />
 
 
@@ -444,23 +444,24 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_plus_minus"
+        android:id="@+id/btn_e_neg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
         android:fontFamily="sans-serif"
         android:minHeight="55sp"
         android:minWidth="77dp"
-        android:text="&#177;"
-        android:textSize="20sp"
+        android:text="e"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_ln"
-        app:layout_constraintEnd_toStartOf="@+id/btn_ln"
+        android:textAllCaps="false"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_ln_floor"
+        app:layout_constraintEnd_toStartOf="@+id/btn_ln_floor"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_power" />
+        app:layout_constraintStart_toEndOf="@+id/btn_power_abs" />
 
     <Button
-        android:id="@+id/btn_modulo"
+        android:id="@+id/btn_mod_cube"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -470,13 +471,13 @@
         android:text="mod"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_power"
-        app:layout_constraintEnd_toStartOf="@+id/btn_power"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_power_abs"
+        app:layout_constraintEnd_toStartOf="@+id/btn_power_abs"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_root" />
+        app:layout_constraintStart_toEndOf="@+id/btn_root_square" />
 
     <Button
-        android:id="@+id/btn_power"
+        android:id="@+id/btn_power_abs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -486,13 +487,13 @@
         android:text="^"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_plus_minus"
-        app:layout_constraintEnd_toStartOf="@+id/btn_plus_minus"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_e_neg"
+        app:layout_constraintEnd_toStartOf="@+id/btn_e_neg"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_modulo" />
+        app:layout_constraintStart_toEndOf="@+id/btn_mod_cube" />
 
     <Button
-        android:id="@+id/btn_root"
+        android:id="@+id/btn_root_square"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/noah_4"
@@ -502,8 +503,8 @@
         android:text="√"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_modulo"
-        app:layout_constraintEnd_toStartOf="@+id/btn_modulo"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_mod_cube"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mod_cube"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -582,8 +583,8 @@
         android:text="M3"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_pi"
-        app:layout_constraintEnd_toStartOf="@+id/btn_pi"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_pi_rand"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pi_rand"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_memory_2" />
 
