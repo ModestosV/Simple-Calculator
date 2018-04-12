@@ -17,23 +17,38 @@ android:
   - extra-android-m2repository
   - extra-google-m2repository  # Removed duplicated component
 
-before_script:    
-  - android list targets
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+#before_script:
+#  - android list targets
+#  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+#  - emulator -avd test -no-skin -no-audio -no-window &
+#  - android-wait-for-emulator
+#  - adb shell input keyevent 82 &
 
 before_install:
 - yes | sdkmanager "platforms;android-27"
 
-script: 
-  - ./gradlew test
-  - ./gradlew connectedAndroidTest
-  - sonar-scanner
+#script:
+#  - ./gradlew test
+#  - ./gradlew connectedAndroidTest
+#  - sonar-scanner
 
 addons:
   sonarcloud:
     organization: "modestosv-github"
     token:
       secure: 4bf73a9c15841d9e2bc9a680c83fbd7e74c91426
+
+jobs:
+  include:
+    - stage: setup
+      script:
+        - android list targets
+        - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+        - emulator -avd test -no-skin -no-audio -no-window &
+        - android-wait-for-emulator
+        - adb shell input keyevent 82 &
+    - stage: analysis
+      script: sonar-scanner
+    - stage: test
+      script: ./gradlew test
+      script: ./gradlew connectedAndroidTest
