@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Paint
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.support.v4.view.ViewPager
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.inputmethod.InputMethodManager
@@ -15,7 +16,7 @@ import com.simplemobiletools.calculator.helpers.BinaryCalculator
 import kotlinx.android.synthetic.main.activity_binary_calculator.*
 
 
-class BinaryCalculatorActivity : SimpleActivity() {
+class BinaryCalculatorActivity : SimpleActivity(){
 
     private lateinit var binaryCalculator: BinaryCalculator
     private lateinit var lastTouched: TextView
@@ -30,6 +31,10 @@ class BinaryCalculatorActivity : SimpleActivity() {
         setContentView(R.layout.activity_binary_calculator)
         binaryCalculator = BinaryCalculator()
         lastTouched = binary_number_1
+
+
+
+
 
 
         binary_number_2.paintFlags = binary_number_2.paintFlags or Paint.UNDERLINE_TEXT_FLAG
@@ -68,6 +73,10 @@ class BinaryCalculatorActivity : SimpleActivity() {
 
             val noKeyboard = input.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             noKeyboard.hideSoftInputFromWindow(input.windowToken, 0)
+        }
+
+        hexa_calculator.setOnClickListener{
+
         }
 
         btn_del.setOnClickListener {

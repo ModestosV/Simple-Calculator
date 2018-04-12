@@ -11,7 +11,27 @@
     tools:ignore="HardcodedText"
     tools:layout_editor_absoluteY="81dp">
     <!--android:background="@color/dark_grey_pressed_mask" -->
+    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pager"
+        android:layout_width="384dp"
+        android:layout_height="85dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/noah_6"
+        android:fontFamily="sans-serif-light"
+        android:gravity="bottom|right"
+        android:maxLines="1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:textColor="@color/white"
+        android:textCursorDrawable="@drawable/yellow_cursor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/binary_number_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
 
+    />
 
     <Button
         android:id="@+id/btn_0"
@@ -154,7 +174,7 @@
         android:textCursorDrawable="@drawable/yellow_cursor"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/binary_number_2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/pager"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="RtlCompat" />
@@ -278,6 +298,68 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_or" />
+
+    <Button
+        android:id="@+id/octo_calculator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/noah_6"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:autoSizeMaxTextSize="@dimen/bigger_text_size"
+        android:minHeight="40dp"
+        android:minWidth="0dp"
+        android:text="Octal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/hexa_calculator"
+        app:layout_constraintEnd_toStartOf="@+id/hexa_calculator"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/hexa_calculator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="@dimen/bigger_text_size"
+        android:textColor="@color/white"
+        android:background="@color/noah_6"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:minHeight="40dp"
+        android:minWidth="39dp"
+        android:text="Hexa"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/binary_calculator"
+        app:layout_constraintEnd_toStartOf="@+id/binary_calculator"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/octo_calculator"
+        />
+
+    <Button
+        android:id="@+id/binary_calculator"
+        android:layout_width="0dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:autoSizeMaxTextSize="@dimen/bigger_text_size"
+        android:background="@color/noah_6"
+        android:fontFamily="sans-serif"
+        android:minHeight="40dp"
+        android:minWidth="39dp"
+        android:text="Binary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/binary_number_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hexa_calculator" />
+
+
+        />
 
 
 </android.support.constraint.ConstraintLayout>
