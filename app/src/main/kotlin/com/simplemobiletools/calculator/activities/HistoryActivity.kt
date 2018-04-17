@@ -131,7 +131,7 @@ class HistoryActivity : SimpleActivity(), Calculator {
         result_range.movementMethod = ScrollingMovementMethod()
     }
 
-    private fun exportData() {
+    fun exportData() {
         //Create CSV Writer
         val writerCSV : CSVWriter
         // File exist and it is not a directory
