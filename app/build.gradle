@@ -64,7 +64,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:2.15.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.opencsv:opencsv:4.0"
     implementation files("Jars/opencsv-4.1.jar")
 }
 
